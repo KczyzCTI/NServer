@@ -2,6 +2,11 @@
 // Created by Admin on 21.12.2022.
 //
 #include <crow.h>
+/*!
+ * \brief something
+ * @param id
+ * @return lol
+ */
 std::string greeter(int id){
     if(id==16161616){return "All your base are belong to us!";}
     static int counter = 0;
