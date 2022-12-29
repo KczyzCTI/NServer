@@ -10,7 +10,8 @@ include_directories(../include)
 # LINK      pthread
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
+add_subdirectory(module)
+target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads nserver-api)
 
 # Doxygen
 

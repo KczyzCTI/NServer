@@ -10,9 +10,18 @@ add_library(GTest::GTest INTERFACE IMPORTED)
 target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
 add_executable(test test.cpp)
-
 target_link_libraries(test
         PRIVATE
         GTest::GTest)
 
+add_executable(test_login module/api/login.cpp ${PROJECT_SOURCE_DIR}/src/module/api/login.cpp)
+target_link_libraries(test_login
+        PRIVATE
+        GTest::GTest)
+target_include_directories(test_login
+        PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+        ${PROJECT_SOURCE_DIR}/src/module)
+# tests to run
 add_test(test_gtests test)
+add_test(test_login test_login)
