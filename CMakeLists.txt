@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.6)
 project(main)
-install(CODE "execute_process(COMMAND install.sh)")
 add_subdirectory(src)
 add_subdirectory(test)
